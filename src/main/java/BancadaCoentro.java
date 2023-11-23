@@ -1,5 +1,8 @@
 public class BancadaCoentro extends BancadaTemplate{
 
+    public BancadaCoentro(String dataPlantio){
+        super("Coentro",dataPlantio);
+    }
 
     @Override
     public String verificarSensor(Leitura leitura) {
@@ -12,9 +15,9 @@ public class BancadaCoentro extends BancadaTemplate{
         }
 
         if (leitura.getCondutividade() < 50){
-            alerta = alerta + "Condutividade " +  leitura.getCondutividade() + " abaixo do permitido";
+            alerta = alerta + "Condutividade " +  leitura.getCondutividade() + " abaixo do permitido.";
         } else if (leitura.getCondutividade() > 80){
-            alerta = alerta + "Condutividade " +  leitura.getCondutividade() + " acima do permitido";
+            alerta = alerta + "Condutividade " +  leitura.getCondutividade() + " acima do permitido.";
         }
 
         return alerta;

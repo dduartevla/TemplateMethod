@@ -1,4 +1,9 @@
 public class BancadaRucula extends BancadaTemplate{
+
+    public BancadaRucula(String dataPlantio){
+        super("Rucula",dataPlantio);
+    }
+
     @Override
     public String verificarSensor(Leitura leitura) {
         String alerta = "";
@@ -10,9 +15,9 @@ public class BancadaRucula extends BancadaTemplate{
         }
 
         if (leitura.getCondutividade() < 40){
-            alerta = alerta + "Condutividade " +  leitura.getCondutividade() + " abaixo do permitido";
+            alerta = alerta + "Condutividade " +  leitura.getCondutividade() + " abaixo do permitido.";
         } else if (leitura.getCondutividade() > 60){
-            alerta = alerta + "Condutividade " +  leitura.getCondutividade() + " acima do permitido";
+            alerta = alerta + "Condutividade " +  leitura.getCondutividade() + " acima do permitido.";
         }
 
         return alerta;
